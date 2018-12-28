@@ -1,0 +1,39 @@
+\chapter{The Virial Theorem}
+
+Given a system having $ \alpha$ particles, with associated position $\vec{r}_\alpha$ and momenta $\vec{p}_\alpha$. We define the virial function as:
+\begin{equation}
+\varsigma = \sum_{\alpha} \vec{p}_\alpha \cdot \vec{r}_\alpha
+\end{equation}
+      It would be interesting to look for the time derivative of this function:
+      \begin{equation}
+     \dfrac{d \varsigma }{dt} = \sum_{\alpha} \vec{\dot{p}}_\alpha \cdot \vec{r}_\alpha + \vec{p}_\alpha \cdot \vec{\dot{r}}_\alpha
+      \end{equation}
+    Since we are dealing with many-particle system. We can take the time average for the previous expression 
+      \begin{align}
+     \langle \dfrac{d \varsigma }{dt} \rangle  =& \frac{\int _0 ^\tau \dfrac{d \varsigma }{dt} dt}{\int _0 ^\tau   dt }\\ \nonumber 
+     &= \frac{ \varsigma(\tau)- \varsigma(0)}{\tau}
+  \end{align}
+  Now, if the system has a periodic motion of a period $ \tau$. The time average for the derivative of the virial function will vanish. even if the system does not admit a periodic motion, the virial function ought to be bounded, hence one can integrate over a sufficiently large interval such that the time average $ \langle \dfrac{d \varsigma }{dt} \rangle $ will approach zero. Hence, we have ( at least as an approximation): \marginpar{ recall that $\vec{F} = \vec{\dot{p}}$}
+  \begin{equation}
+ \langle \sum_{\alpha}  \vec{p}_\alpha \cdot \vec{\dot{r}}_\alpha\rangle = -  \langle \sum_{\alpha} \vec{\dot{p}}_\alpha \cdot \vec{r}_\alpha \rangle
+  \end{equation}
+  We can now identify the LHS being twice the kinetic energy , the RHS is the force dotted with the position :
+   \begin{equation}
+  \langle T \rangle= - \frac{1}{2} \langle \sum_{\alpha} \vec{F}_\alpha \cdot \vec{r}_\alpha \rangle
+  \label{vir}
+   \end{equation}
+   This is the\textbf{ Virial theorem }, the expected value for the kinetic energy for a system is equal to its virial function.\\
+   It is interesting to look at forces that arise from central potential taking the form :
+ \begin{equation}
+ V = k r ^{n+1}
+ \end{equation}
+ Hence, by the virial theorem eq \eqref{vir}:
+ \begin{align}
+  \langle T \rangle= & \frac{1}{2} \langle   r \cdot  \frac{d}{d r} (k r ^{n+1} ) \rangle \\ \nonumber
+  =& \frac{1}{2}\langle (n+1) k r^{n+1}\rangle \\ \nonumber
+  &= \frac{n+1}{2}\langle V \rangle
+ \end{align}
+ For Columb and gravitational potentials, $ n =-2$. Therefore we have :
+ \begin{equation}
+ \langle T \rangle= - \frac{1}{2}\langle V \rangle
+ \end{equation}

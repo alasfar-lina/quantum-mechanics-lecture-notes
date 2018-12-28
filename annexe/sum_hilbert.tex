@@ -1,0 +1,97 @@
+\chapter{Summery of Hilbert spaces}
+    \section{Representations of Hilbert space}
+   We list a summery for the most basic properties of Hilbert spaces, in both representations. \textbf{Discrete} and \textbf{continuous}\\
+   \bigskip
+   The list goes as follows: \\ 
+   \begin{tabular}{c c c}
+   	Continuous representation & & Discrete representation \\
+   	\hline
+   	&&\\
+   	$| \psi \rangle = \int \psi (x) |x\rangle dx$ & & $ |\psi \rangle =\sum_n \psi_n |e_n\rangle$\\
+   	&&\\
+   	$ \langle x'| x\rangle = \int dx \delta (x' -x)$ && 	$ \langle e_m| e_n\rangle= \delta_{mn}$\\
+   	&&\\
+   	$ \langle \psi | \psi \rangle = \int \psi^*(x) \psi(x) dx =1 $ && 	$ \langle \psi | \psi \rangle = \sum_n | \psi_n|^ 2 = 1$\\
+   	&&\\
+   		$ \langle \phi | \psi \rangle = \int  \langle \phi | x \rangle \langle x | \psi \rangle dx = \int \phi^* (x) \psi(x) dx$&& 	$ \langle \phi | \psi \rangle = \sum_n \langle \phi | e_n \rangle \langle e_n | \psi \rangle = \sum_n \phi^*_n \psi_n$\\
+  &&\\
+  
+   \end{tabular}
+  
+   Note that we sometimes denote the basis $ | e_i\rangle$ by $ | i\rangle$.  Here we consider the vector $ | \psi\rangle$ to be normalised.
+   
+   \section{Operator properties}
+   We start by defining the normalised ket :
+   \begin{equation*}
+   | \psi\rangle = \sum_i \psi_i | i\rangle
+   \end{equation*}
+   With the property :
+   \begin{equation*}
+   | \psi_j|^ 2 \equiv P (j) 
+   \end{equation*}
+   Hence the square modulus of the component is equal to  what-to-be considered as probability. Note that any of the following argument will  also apply to continuous basis representation according to the list above.
+   We can write an operator $\hat{ \Omega}$ as :
+   \[
+   \hat{ \Omega} = \sum_i \omega_i | \omega_i\rangle \langle \omega_i|
+   \]
+   This is knows as the\textbf{ spectral decompositio}n , where $\omega_i$ and $| \omega_i\rangle$ are the eigenvalues and eigenbasis respectively.
+   The expected-value for $ \hat{ \Omega}$ is written as:
+   \[
+   \langle\hat{ \Omega}\rangle = \langle \psi|\hat{\Omega}| \psi \rangle
+   \]
+   Proof:\\
+   Expanding the above expression :
+   \[
+ \left(   \sum_k \psi^*_k \langle \omega_k| \right)  \left(   \sum_j \omega_j | \omega_j \rangle \langle \omega_j |\right) \left( \sum_i \psi_i | \omega_i\rangle \right) =
+   \]
+
+   \[
+ \Leftrightarrow  \sum_{k} \sum_j \psi^*_k \omega_j \underbrace{\langle \omega_k|\langle \omega_j \rangle}_{= \delta_{kj}} \;  \sum_{j}\sum_i \psi_i \underbrace{ \langle \omega_j |\langle \omega_ i \rangle}_{= \delta_{ij}}=
+   \]   \[
+\Leftrightarrow  \sum_j \omega_j \underbrace{| \psi_j|^ 2}_{= \psi^*_j \psi_j} = \sum_j \omega_j  P(j) \; \; \; \;\Box
+   \]
+ Similarly, we can define the standard deviation :
+ \[
+ \sigma^ 2 ( \Omega) = \langle \hat{\Omega}^ 2\rangle - \left( \langle \hat{\Omega}\rangle\right) ^ 2
+ \]
+ And the expected value for a function of $ \hat{\Omega}$:
+ \[
+ \langle f( \hat{\Omega})\rangle = \sum_j f(\omega_j) P(j)
+ \]
+ That implies that the eigenvalue of the function of the operator is the function of the eigenvalue itself.\\
+ We now attempt to find the matrix element for an operator $ \hat{\Omega}$ not expressed in the eigenbasis. Starting by :
+ \[
+ | \phi \rangle =  \hat{\Omega} |\psi \rangle 
+ \]
+ expanding this expression:
+ \[
+ \sum_k \phi_k | k \rangle = \hat{\Omega} \sum_i \psi_i | i\rangle 
+ \]
+ Taking the jth component of the LHS, by projecting on the basis $ | j \rangle$:
+ \[
+ \phi_j = \sum_i \psi_i \langle \hat j|{\Omega}| i\rangle
+ \] 
+ Moreover, the ket $| \phi \rangle$ is written as:
+ \[
+\sum_j \phi_j = \sum_j\sum_i \psi_i \langle \hat j|{\Omega}| i\rangle
+ \] 
+ We identify the matrix elements of the operator by
+ \[
+ \Omega_{ji} = \sum_j\sum_i  \langle \hat j|{\Omega}| i\rangle
+ \]
+ We can simply make the transition to the eigenbasis :
+ \[
+ \Omega_{ij} = \langle \omega_i| \hat{\Omega}| \omega_j\rangle
+ \]
+ But $ \hat{\Omega}| \omega_j\rangle = \omega_j | \omega_j \rangle $ , then we have , by linearity:
+ \[
+  \Omega_{ij} = \omega_j \langle \omega_i|  \omega_j\rangle =
+ \]
+ \[
+ \Leftrightarrow \omega_j \delta_{ij}
+ \]
+ Hence the operator is diagonalised by the eigenbasis.
+ 
+
+
+
